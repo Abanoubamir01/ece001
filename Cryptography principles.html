@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cryptography principles</title>
+  </head>
+  <body>
+    <h1>Cryptography principles</h1>
+    <hr/>
+    <ul>
+      <li style="font-size:20px;">The most important principle to keep in mind is that you should never attempt to design your own cryptosystem. The world’s most brilliant cryptographers (including Phil Zimmerman and Ron Rivest) routinely create cryptosystems with serious security flaws in them. In order for a cryptosystem to be deemed “secure,” it must face intense scrutiny from the security community. Never rely on security through obscurity, or the fact that attackers may not have knowledge of your system. Remember that malicious insiders and determined attackers will attempt to attack your system.</li>
+      <li style="font-size:20px;">The only things that should be “secret” when it comes to a secure cryptosystem are the keys themselves. Be sure to take appropriate steps to protect any keys that your systems use. Never store encryption keys in clear text along with the data that they protect. This is akin to locking your front door and placing the key under the doormat. It is the first place an attacker will look. Here are three common methods for protecting keys (from least secure to most secure):</li>
+      <ol type="1" style="font-size:20px;">
+        <li style="font-size:20px;">Store keys in a filesystem and protect them with strong access control lists (ACLs). Remember to adhere to the principal of least privilege.</li>
+        <li style="font-size:20px;">Encrypt your data encryption keys (DEKs) with a second key encrypting key (KEK). The KEK should be generated using password-based encryption (PBE). A password known to a minimal number of administrators can be used to generate a key using an algorithm such as bcrypt, scrypt, or PBKDF2 and used to bootstrap the cryptosystem. This removes the need to ever store the key unencrypted anywhere.</li>
+        <li style="font-size:20px;">A hardware security module (HSM) is a tamper-resistant hardware appliance that can be used to store keys securely. Code can make API calls to an HSM to provide keys when needed or to perform decryption of data on the HSM itself.</li>
+      </ol>
+  <li style="font-size:20px;">Make sure that you only use algorithms, key strengths, and modes of operation that conform to industry best practices. Advanced encryption standard (AES) (with 128, 192, or 256-bit keys) is the standard for symmetric encryption. RSA and elliptical curve cryptography (ECC) with at least 2048-bit keys are the standard for asymmetric encryption. Be sure to avoid insecure modes of operation such as AES in Electronic Codebook (ECB) mode or RSA with no padding.</li>
+  <img src="https://sectigostore.com/blog/wp-content/uploads/2021/01/cryptology-vs-cryptography-feature.jpg" style="width:500px;height250px;" hspace="65%" alt="principles">
+  <li style="font-size:20px;">for more information <a href="https://www.synopsys.com/glossary/what-is-cryptography.html#3" target="_blank">click here</a></li>
+    </ul>
+  </body>
+</html>
